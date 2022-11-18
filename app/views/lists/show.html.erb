@@ -1,8 +1,10 @@
 <h1><%= @list.name %></h1>
 
+
 <% @list.bookmarks.each do |bookmark| %>
 
     <li><%= bookmark.movie.title %></li>
+    <%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fit if bookmark.photo.attached? %>
 
   <ul>
     <%= bookmark.comment %>
