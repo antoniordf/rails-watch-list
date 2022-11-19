@@ -1,9 +1,17 @@
-<h1>My Movie Lists</h1>
+<div class="navbar navbar-collapse navbar-brand">
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag("tr1rbotcgtqsu9chaxke", height: 300, crop: :fill) %>')">
+  <div class="banner-text">
+    <h1>My Movie Lists</h1>
+    <div class="button-wrapper">
+      <p class="button" data-primary="true"><%= link_to "Add a new list", new_list_path(@list) %></p>
+    </div>
+  </div>
+</div>
 
 <ul>
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
 </ul>
-
-<%= link_to "Add a new list", new_list_path(@list) %>
