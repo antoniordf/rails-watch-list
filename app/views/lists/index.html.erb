@@ -1,7 +1,7 @@
 <div class="navbar navbar-collapse navbar-brand">
 </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag("tr1rbotcgtqsu9chaxke", height: 300, crop: :fill) %>')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(https://res.cloudinary.com/dqebjuhkq/image/upload/v1668862584/tr1rbotcgtqsu9chaxke.jpg);">
   <div class="banner-text">
     <h1>My Movie Lists</h1>
     <div class="button-wrapper">
@@ -9,9 +9,17 @@
     </div>
   </div>
 </div>
-
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<br>
+<div class="container-lg">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-homepage" style="background-image: url(<%= cl_image_path list.photo.key, height: 300, width: 250, crop: :fill if list.photo.attached? %>);">
+        <%= link_to "🗑",
+            list_path(list),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <br>
+        <h2><%= link_to list.name, list_path(list) %></h2>
+      </div>
+    <% end %>
+  </div>
+</div>

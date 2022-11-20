@@ -21,3 +21,28 @@
   font-weight: bold;
   }
 }
+
+.card-homepage {
+  width: 250px;
+  height: 300px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px #888888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  -webkit-filter: brightness(100%);
+
+  &:hover {
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  .remove {
+    text-align: right;
+  }
+}
