@@ -1,22 +1,24 @@
-<div class="navbar navbar-collapse navbar-brand">
-  <p class="button" data-primary="true"><%= link_to "Add New Bookmark", new_list_bookmark_path(@list) %></p>
-  <p class="button"><%= link_to "Back to all lists", lists_path(@list) %></p>
-</div>
+<div class="container-lg">
+  <div class="navbar navbar-collapse navbar-brand">
+    <p class="button" data-primary="true"><%= link_to "Add New Bookmark", new_list_bookmark_path(@list) %></p>
+    <p class="button"><%= link_to "Back to all lists", lists_path(@list) %></p>
+  </div>
 
-<h1><%= @list.name %></h1>
+  <h1><%= @list.name %></h1>
 
-<div class="cards">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="card">
-      <%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fit if bookmark.photo.attached? %>
-      <div class="card-info">
-        <h3><%= bookmark.movie.title %></h3>
-        <%= bookmark.comment %>
-        <br>
-        <%= link_to "🗑",
-            bookmark_path(bookmark),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card">
+        <%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fit if bookmark.photo.attached? %>
+        <div class="card-info">
+          <h3><%= bookmark.movie.title %></h3>
+          <%= bookmark.comment %>
+          <br>
+          <%= link_to "🗑",
+              bookmark_path(bookmark),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -9,11 +9,12 @@
 .card {
   width: 250px;
   border-radius: 3px;
-  box-shadow: 5px 5px 4px #888888;
+  box-shadow: 3px 3px 5px #888888;
   background-color: $grey;
 }
 
 .card-info {
+  color: black;
   padding: 5px;
 
   h3 {
@@ -40,9 +41,5 @@
     -o-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;
-  }
-
-  .remove {
-    text-align: right;
   }
 }

@@ -1,8 +1,15 @@
-<h1>New Bookmark</h1>
+<div class="container-md">
+  <div class="header">
+    <div class="navbar navbar-collapse navbar-brand">
+    </div>
+  </div>
+  <br>
+  <h1 class="mt-4">New Bookmark</h1>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie, as: :select %>
-  <%= f.input :comment %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Add to list", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, as: :select %>
+    <%= f.input :comment %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Add to list", class: "btn btn-primary" %>
+  <% end %>
+</div>
